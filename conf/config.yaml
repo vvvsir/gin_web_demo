@@ -1,0 +1,31 @@
+name: "gin_web_demo"
+mode: "release"
+port: 8084
+version: "v0.0.1"
+start_time: "2020-07-01"
+
+auth:
+  jwt_expire: 8760
+
+log:
+  level: "info"
+  filename: "gin_web_demo.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  user: "root"
+  password: "root123123"
+  dbname: "gin_web_demo"
+  max_open_conns: 200
+  max_idle_conns: 50
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: "123"
+  db: 1
+  pool_size: 100

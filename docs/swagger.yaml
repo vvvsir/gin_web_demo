@@ -1,0 +1,184 @@
+basePath: /api/v1/
+definitions:
+  dto.CreateUserDto:
+    properties:
+      email:
+        type: string
+      gender:
+        type: integer
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  dto.LoginDto:
+    properties:
+      password:
+        description: 密码
+        type: string
+      username:
+        description: 用户名
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  dto.UpdateUserDto:
+    properties:
+      email:
+        type: string
+      gender:
+        type: integer
+      password:
+        type: string
+      userId:
+        type: integer
+    type: object
+  dto.UserSearchDto:
+    properties:
+      email:
+        type: string
+      page:
+        type: integer
+      pageSize:
+        type: integer
+      username:
+        type: string
+    required:
+    - page
+    - pageSize
+    type: object
+  utils.ResponseData:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      msg:
+        type: object
+    type: object
+info:
+  contact: {}
+  description: This is a sample server.
+  license: {}
+  title: Swagger Example API
+  version: 0.0.1
+paths:
+  /createuser:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 请求参数结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateUserDto'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 新创建用户信息
+      tags:
+      - 用户模块
+  /deleteuser/{userId}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 用户ID
+        in: path
+        name: userId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 删除指定用户
+      tags:
+      - 用户模块
+  /getuser/{userId}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 登录信息
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 用户ID
+        in: path
+        name: userId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 获取单个用户信息
+      tags:
+      - 用户模块
+  /getusers:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 请求参数结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserSearchDto'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 获取用户列表（分页）
+      tags:
+      - 用户模块
+  /login:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 请求参数结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dto.LoginDto'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 用户登录
+      tags:
+      - 用户模块
+  /updateuser:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 请求参数结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateUserDto'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.ResponseData'
+      summary: 更新用户信息
+      tags:
+      - 用户模块
+swagger: "2.0"
