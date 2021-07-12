@@ -14,8 +14,8 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-#Custom file suffix
+#Custom log file suffix
 *.log
 
-#Custom folder
+# Visual Studio Code cache/options directory
 .vscode/
