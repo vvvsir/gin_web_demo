@@ -16,7 +16,9 @@
 ```
 
 进入gin_web_demo容器
+
 1、修改conf/config.yaml 里的mysql及redis配置
+
 2、执行`./gin_web_demo conf/config.yaml`
 
 
