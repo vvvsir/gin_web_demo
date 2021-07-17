@@ -12,9 +12,9 @@ import (
 	"os"
 )
 
-// @title Swagger Example API
+// @title gin_web_demo
 // @version 0.0.1
-// @description  This is a sample server.
+// @description  This is a api server.
 // @BasePath /api/v1/
 func main() {
 	if len(os.Args) < 2 {

@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server.",
-        "title": "Swagger Example API",
+        "description": "This is a api server.",
+        "title": "gin_web_demo",
         "contact": {},
         "license": {},
         "version": "0.0.1"

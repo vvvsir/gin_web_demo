@@ -314,8 +314,8 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "",
 	BasePath:    "/api/v1/",
 	Schemes:     []string{},
-	Title:       "Swagger Example API",
-	Description: "This is a sample server.",
+	Title:       "gin_web_demo",
+	Description: "This is a api server.",
 }
 
 type s struct{}

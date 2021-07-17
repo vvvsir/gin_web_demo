@@ -59,9 +59,9 @@ definitions:
     type: object
 info:
   contact: {}
-  description: This is a sample server.
+  description: This is a api server.
   license: {}
-  title: Swagger Example API
+  title: gin_web_demo
   version: 0.0.1
 paths:
   /createuser:
